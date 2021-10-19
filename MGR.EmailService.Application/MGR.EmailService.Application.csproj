@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.2" />
+      <PackageReference Include="MGR.Common.Api" Version="5.0.8" />
+      <PackageReference Include="MGR.Common.EventBus" Version="3.0.18" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MGR.EmailService.Common\MGR.EmailService.Common.csproj" />
+    </ItemGroup>
+
+</Project>
