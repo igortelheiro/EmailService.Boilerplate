@@ -10,11 +10,8 @@
 
     <ItemGroup>
         <PackageReference Include="Common.Api" Version="1.1.1" />
-        <PackageReference Include="EventBus.Core" Version="1.0.11" />
         <PackageReference Include="FluentEmail.Razor" Version="3.0.0" />
         <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
-        <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.3" />
-        <PackageReference Include="RabbitMQEventBus" Version="1.0.11" />
         <PackageReference Include="Serilog" Version="2.10.0" />
         <PackageReference Include="Serilog.Extensions.Hosting" Version="4.1.2" />
         <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
@@ -23,6 +20,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\EmailService.Application\EmailService.Application.csproj" />
+      <ProjectReference Include="..\EmailService.EventBusAdapter\EmailService.EventBusAdapter.csproj" />
     </ItemGroup>
 
 </Project>

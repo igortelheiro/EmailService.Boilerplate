@@ -1,10 +1,10 @@
-﻿using EmailService.Application.Interface;
-using EventBus.Core.Interfaces;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using EmailService.Application.Interface;
 using EmailService.Application.Model;
 using EventBus.Core.Events;
+using EventBus.Core.Interfaces;
 
-namespace EmailService.Application.IntegrationHandler
+namespace EmailService.EventBusAdapter
 {
     public class EmailRequestHandler : IIntegrationEventHandler<EmailRequestedEvent>
     {

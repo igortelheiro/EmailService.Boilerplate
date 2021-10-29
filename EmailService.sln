@@ -4,8 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService.API", "EmailService.API\EmailService.API.csproj", "{1B1D4A22-F7B9-4EBF-873F-089D77FA89EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61FADCF6-67D2-4C05-8F0E-33A15ABF7DE1} = {61FADCF6-67D2-4C05-8F0E-33A15ABF7DE1}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService.Application", "EmailService.Application\EmailService.Application.csproj", "{8510FF8F-F566-4083-9EC0-8F52F78DD863}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService.EventBusAdapter", "EmailService.EventBusAdapter\EmailService.EventBusAdapter.csproj", "{61FADCF6-67D2-4C05-8F0E-33A15ABF7DE1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8510FF8F-F566-4083-9EC0-8F52F78DD863} = {8510FF8F-F566-4083-9EC0-8F52F78DD863}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,10 @@ Global
 		{8510FF8F-F566-4083-9EC0-8F52F78DD863}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8510FF8F-F566-4083-9EC0-8F52F78DD863}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8510FF8F-F566-4083-9EC0-8F52F78DD863}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61FADCF6-67D2-4C05-8F0E-33A15ABF7DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FADCF6-67D2-4C05-8F0E-33A15ABF7DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FADCF6-67D2-4C05-8F0E-33A15ABF7DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FADCF6-67D2-4C05-8F0E-33A15ABF7DE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

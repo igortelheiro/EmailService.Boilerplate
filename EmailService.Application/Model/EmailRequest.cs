@@ -1,8 +1,13 @@
-﻿using EventBus.Core.Events;
-
-namespace EmailService.Application.Model
+﻿namespace EmailService.Application.Model
 {
-    public record EmailRequest : EmailRequestedEvent
+    public record EmailRequest
     {
+        public string DestinationEmail { get; init; }
+
+        public string Subject { get; init; }
+
+        public string Content { get; init; }
+
+        public string Template { get; init; }
     }
 }

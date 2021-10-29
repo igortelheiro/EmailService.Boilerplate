@@ -6,9 +6,8 @@
 
     <ItemGroup>
       <PackageReference Include="Common.Api" Version="1.1.1" />
-      <PackageReference Include="EventBus.Core" Version="1.0.10" />
+      <PackageReference Include="EventBus.Core" Version="1.0.11" />
       <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
-      <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.3" />
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
     </ItemGroup>
