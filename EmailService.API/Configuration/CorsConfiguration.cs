@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MGR.EmailService.API.Configuration
+namespace EmailService.API.Configuration
 {
     public static class CorsConfiguration
     {

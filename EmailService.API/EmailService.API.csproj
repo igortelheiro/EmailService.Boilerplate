@@ -9,21 +9,20 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Common.Api" Version="1.1.1" />
+        <PackageReference Include="EventBus.Core" Version="1.0.11" />
         <PackageReference Include="FluentEmail.Razor" Version="3.0.0" />
         <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
-        <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.2" />
-        <PackageReference Include="MGR.Common.Api" Version="5.0.8" />
-        <PackageReference Include="MGR.Common.EventBus" Version="3.0.18" />
-        <PackageReference Include="MGR.Common.MassTransitEventBus" Version="3.0.18" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.3" />
+        <PackageReference Include="RabbitMQEventBus" Version="1.0.11" />
         <PackageReference Include="Serilog" Version="2.10.0" />
         <PackageReference Include="Serilog.Extensions.Hosting" Version="4.1.2" />
         <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MGR.EmailService.Application\MGR.EmailService.Application.csproj" />
-      <ProjectReference Include="..\MGR.EmailService.Common\MGR.EmailService.Common.csproj" />
+      <ProjectReference Include="..\EmailService.Application\EmailService.Application.csproj" />
     </ItemGroup>
 
 </Project>

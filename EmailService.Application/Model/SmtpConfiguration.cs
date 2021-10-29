@@ -1,4 +1,4 @@
-﻿namespace MGR.EmailService.Common
+﻿namespace EmailService.Application.Model
 {
     public class SmtpConfiguration
     {

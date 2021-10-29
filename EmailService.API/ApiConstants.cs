@@ -1,4 +1,4 @@
-﻿namespace MGR.EmailService.API
+﻿namespace EmailService.API
 {
     public static class CorsSection
     {

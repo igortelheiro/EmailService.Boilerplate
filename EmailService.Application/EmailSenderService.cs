@@ -1,16 +1,14 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using EmailService.Application.Interface;
+using EmailService.Application.Model;
 using FluentEmail.Core;
 using FluentEmail.Core.Models;
-using MGR.Common.Api.DTOs.Base;
-using MGR.Common.Api.DTOs.LoginAPI;
-using MGR.EmailService.Application.Interface;
-using MGR.EmailService.Common;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace MGR.EmailService.Application
+namespace EmailService.Application
 {
     public class EmailSenderService : IEmailSenderService
     {
@@ -30,9 +28,9 @@ namespace MGR.EmailService.Application
         #endregion
 
         
-        public async Task<ResponseDto> SendEmailAsync(EmailRequestDto request)
+        public async Task<EmailSendResult> SendEmailAsync(EmailRequest request)
         {
-            var result = new ResponseDto();
+            var result = new EmailSendResult();
             try
             {
                 BuildEmail(request);
@@ -40,25 +38,25 @@ namespace MGR.EmailService.Application
                 var response = await _mailer.SendAsync();
                 if (!response.Successful)
                 {
-                    return result with { Erro = response.ErrorMessages.FirstOrDefault() };
+                    return result with { Error = response.ErrorMessages.FirstOrDefault() };
                 }
 
                 return result;
             }
             catch (Exception ex)
             {
-                return result with { Erro = ex.Message };
+                return result with { Error = ex.Message };
             }
         }
 
 
-        private void BuildEmail(EmailRequestDto request)
+        private void BuildEmail(EmailRequest request)
         {
             var emailData = new EmailData
             {
                 Subject = request.Subject,
                 ToAddresses = { new Address(request.DestinationEmail) },
-                Body = request.Body
+                Body = request.Content
             };
 
             _mailer.Data = emailData;

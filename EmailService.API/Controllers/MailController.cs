@@ -1,35 +1,34 @@
-﻿using System.Threading.Tasks;
-using MGR.Common.Api;
-using MGR.Common.Api.DTOs.Base;
-using MGR.Common.Api.DTOs.Extensions;
-using MGR.Common.Api.DTOs.LoginAPI;
-using MGR.EmailService.Application.Interface;
+﻿using EmailService.Application.Interface;
+using EmailService.Application.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
+using Common.Api.DTOs.Extensions;
 
-namespace MGR.EmailService.API.Controllers
+namespace EmailService.API.Controllers
 {
     [ApiController]
-    public class EmailController : ControllerBase
+    [Route("[controller]")]
+    public class MailController : ControllerBase
     {
-        private readonly ILogger<EmailController> _logger;
+        private readonly ILogger<MailController> _logger;
         private readonly IEmailSenderService _emailSenderService;
 
-        public EmailController(ILogger<EmailController> logger, IEmailSenderService emailSenderService)
+        public MailController(ILogger<MailController> logger, IEmailSenderService emailSenderService)
         {
             _logger = logger;
             _emailSenderService = emailSenderService;
         }
         
 
-        [HttpPost(EmailEndpoints.Send)]
+        [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<ResponseDto>> SendEmail(EmailRequestDto emailRequest)
+        public async Task<ActionResult<EmailSendResult>> SendEmail(EmailRequest emailRequest)
         {
             var result = await _emailSenderService.SendEmailAsync(emailRequest);
-            if (result.Sucesso)
+            if (result.Success)
             {
                 return Ok(result);
             }

@@ -1,16 +1,15 @@
-﻿using System.Net.Http;
-using MGR.Common.Api.Configuration;
-using MGR.Common.EventBus.Events;
-using MGR.Common.EventBus.Interfaces;
-using MGR.Common.MassTransitEventBus.Configuration;
-using MGR.EmailService.Application;
-using MGR.EmailService.Application.IntegrationHandler;
-using MGR.EmailService.Application.Interface;
-using MGR.EmailService.Common;
+﻿using EmailService.Application;
+using EmailService.Application.IntegrationHandler;
+using EmailService.Application.Interface;
+using EmailService.Application.Model;
+using EventBus.Core.Events;
+using EventBus.Core.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RabbitMQEventBus.Configuration;
+using System.Net.Http;
 
-namespace MGR.EmailService.API.Configuration
+namespace EmailService.API.Configuration
 {
     public static class DependencyInjectionConfiguration
     {
@@ -19,10 +18,9 @@ namespace MGR.EmailService.API.Configuration
             // Services
             services.AddSingleton(_ => new HttpClient());
             services.AddSingleton<IEmailSenderService, EmailSenderService>();
-            services.AddScoped<IIntegrationEventHandler<EmailRequestEvent>, EmailRequestHandler>();
+            services.AddScoped<IIntegrationEventHandler<EmailRequestedEvent>, EmailRequestHandler>();
             
             // Security
-            services.AddApiKeySwaggerSecurity(typeof(Program).Assembly);
             services.ConfigureCors(configuration);
 
             // SmtpClient
@@ -40,7 +38,7 @@ namespace MGR.EmailService.API.Configuration
             var sp = services.BuildServiceProvider();
             var bus = sp.GetRequiredService<IEventBus>();
             
-            bus.Subscribe<EmailRequestEvent, EmailRequestHandler>();
+            bus.Subscribe<EmailRequestedEvent, EmailRequestHandler>();
         }
     }
 }

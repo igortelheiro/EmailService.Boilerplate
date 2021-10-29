@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace MGR.EmailService.API
+namespace EmailService.API
 {
     public class Program
     {

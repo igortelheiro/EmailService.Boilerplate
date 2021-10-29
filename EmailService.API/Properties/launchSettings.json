@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Cig.EmailService.API": {
+    "EmailService.API": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

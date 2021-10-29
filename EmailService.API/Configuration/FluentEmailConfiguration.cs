@@ -2,11 +2,11 @@
 using System.Net;
 using System.Net.Mail;
 using System.Text;
-using MGR.EmailService.Common;
+using EmailService.Application.Model;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MGR.EmailService.API.Configuration
+namespace EmailService.API.Configuration
 {
     public static class FluentEmailConfiguration
     {
