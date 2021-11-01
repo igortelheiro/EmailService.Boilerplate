@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
-using Common.Api.DTOs.Extensions;
 
 namespace EmailService.API.Controllers
 {
@@ -32,7 +31,12 @@ namespace EmailService.API.Controllers
             {
                 return Ok(result);
             }
-            return BadRequest(result.ToProblemDetails("Erro ao tentar enviar email"));
+
+            return BadRequest(new ProblemDetails
+            {
+                Title = "Erro ao tentar enviar email",
+                Detail = result.Error
+            });
         }
     }
 }
