@@ -1,13 +1,12 @@
-﻿namespace EmailService.Application.Model
+﻿namespace EmailService.Application.Model;
+
+public record EmailRequest
 {
-    public record EmailRequest
-    {
-        public string DestinationEmail { get; init; }
+    public string DestinationEmail { get; init; }
 
-        public string Subject { get; init; }
+    public string Subject { get; init; }
 
-        public string Content { get; init; }
+    public string Content { get; init; }
 
-        public string Template { get; init; }
-    }
+    public string Template { get; init; }
 }

@@ -1,7 +1,6 @@
-﻿namespace EmailService.API
+﻿namespace EmailService.API;
+
+public static class CorsSection
 {
-    public static class CorsSection
-    {
-        public const string OriginAddress = "Cors:Origin";
-    }
+    public const string OriginAddress = "Cors:Origin";
 }
