@@ -1,12 +1,11 @@
 ﻿using EmailService.Application;
 using EmailService.Application.Interface;
 using EmailService.Application.Model;
-using EventBus.Core.Events;
-using EventBus.Core.Interfaces;
+using EmailService.EventBusAdapter.Config;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Data.Common;
 using System.Net.Http;
-//using EmailService.EventBusAdapter.Config;
 
 namespace EmailService.API.Configuration
 {
@@ -26,7 +25,7 @@ namespace EmailService.API.Configuration
             services.ConfigureFluentEmail(configuration);
 
             // EventBus
-            //services.ConfigureEventBus(services.BuildServiceProvider);
+            services.ConfigureEventBus(services.BuildServiceProvider);
         }
     }
 }
