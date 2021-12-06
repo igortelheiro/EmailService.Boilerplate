@@ -64,7 +64,7 @@ namespace EmailService.Application
 
             if (request.Template != null)
             {
-                _mailer.UsingTemplate(request.Template, new object());
+                _mailer.UsingTemplate(request.Template, new object(), true);
             }
         }
     }

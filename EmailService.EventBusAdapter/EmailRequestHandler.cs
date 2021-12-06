@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using EmailService.Application.Interface;
 using EmailService.Application.Model;
 using EventBus.Core.Events;
@@ -24,6 +25,8 @@ public class EmailRequestHandler : IIntegrationEventHandler<EmailRequestedEvent>
             Content = @event.Content,
             Template = @event.Template
         };
-        await _emailSenderSenderService.SendEmailAsync(emailRequest);
+        var result = await _emailSenderSenderService.SendEmailAsync(emailRequest);
+        if (!result.Success)
+            throw new Exception(result.Error);
     }
 }
