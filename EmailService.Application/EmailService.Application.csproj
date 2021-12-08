@@ -5,8 +5,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="EventBus.Core" Version="2.0.13" />
       <PackageReference Include="Common.Api" Version="2.0.2" />
-      <PackageReference Include="EventBus.Core" Version="2.0.4" />
       <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />

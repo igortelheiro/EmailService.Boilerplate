@@ -5,13 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EventBus.Core" Version="2.0.4" />
-    <PackageReference Include="IntegrationEventLogEF" Version="2.0.4" />
+    <PackageReference Include="EventBus.Core" Version="2.0.13" />
+    <PackageReference Include="IntegrationEventLogEF" Version="2.0.13" />
+    <PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="7.3.0" />
+    <PackageReference Include="MassTransit.EventBus.Core" Version="2.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
-    <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.4" />
-	<PackageReference Include="RabbitMQEventBus" Version="2.0.4" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="7.3.0" />
+	<PackageReference Include="RabbitMQEventBus" Version="2.0.13" />
   </ItemGroup>
 
   <ItemGroup>

@@ -25,7 +25,7 @@ namespace EmailService.API.Configuration
             services.ConfigureFluentEmail(configuration);
 
             // EventBus
-            services.ConfigureEventBus(services.BuildServiceProvider);
+            services.ConfigureEventBus(services.BuildServiceProvider, configuration);
         }
     }
 }
